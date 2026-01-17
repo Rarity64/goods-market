@@ -2,6 +2,7 @@ $('#auth-button').click(
     function() {
         let email = $('#email').val();
         let password = $('#password').val();
+        let authButton = $('#auth-button');
         const CSRF = $('[name=csrfmiddlewaretoken]').val();
         
         if(!email) {
@@ -23,6 +24,27 @@ $('#auth-button').click(
             type: 'POST',
             dataType: 'json',
             data: userData,
+
+            success: function(data) {
+                console.log(data);
+                authButton.text('Успешно');
+                authButton.prop('disabled', true);
+                authButton.css({
+                    'background-color': '#4CAF50',
+                    'color': '#fff',
+                });
+                console.log('Нашелся пользователь')
+                window.location.href = '/'; //Переход на главную сайта
+            },
+            error: function(error) {
+                console.error('Error: ', error);
+                authButton.text('Нет такого пользователя');
+                authButton.css({
+                    'background-color': '#af4c4f',
+                    'color': '#fff',
+                });
+                window.location.href = '/';
+            },
         });
     }
 );

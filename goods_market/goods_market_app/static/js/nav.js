@@ -2,7 +2,7 @@ $('body').prepend(`
     <!-- Панель навигации -->
     <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
             <!-- <img src="./img/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="not found" loading="lazy"> -->
             <i class="fa-solid fa-seedling" style="color: #0efb35;"></i>
             <!-- <i class="fa-solid fa-gamepad fa-sm" style="color: #0efb35;"></i> -->
