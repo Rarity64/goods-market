@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from .models import Good
 
 def index(request):
     try:
@@ -50,3 +51,8 @@ def reg(request):
 def logout_view(request):
     logout(request)
     return redirect('index')
+
+def good_template(request, id):
+    good = Good.objects.get(id = id)
+    context = { 'title' : good.title }
+    return render(request, 'good-template.html', context)
