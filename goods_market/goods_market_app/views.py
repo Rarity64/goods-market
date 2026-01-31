@@ -52,7 +52,17 @@ def logout_view(request):
     logout(request)
     return redirect('index')
 
+def catalog_view(request):
+    good = Good.objects.all()
+    context = {
+        'good_list' : good,
+    }
+    return render(request, 'catalog.html', context)
+
 def good_template(request, id):
-    good = Good.objects.get(id = id)
-    context = { 'title' : good.title }
+    good = Good.objects.get(id = id) # конструктор класса
+    context = { 
+        'title' : good.title,
+        'image' : good.image,
+    }
     return render(request, 'good-template.html', context)
