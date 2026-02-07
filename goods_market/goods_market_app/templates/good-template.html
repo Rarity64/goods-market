@@ -7,8 +7,7 @@
 
     <!-- Связывание с CSS файлом -->
     <link rel="stylesheet" href={% static 'css/header.css' %}>
-    <link rel="stylesheet" href={% static 'css/interesting.css' %}>
-    <link rel="stylesheet" href={% static 'css/feedback.css' %}>
+    <link rel="stylesheet" href={% static 'css/good.css' %}>
     <link rel="stylesheet" href={% static 'css/footer.css' %}>
     
     <!-- Bootstrap 5.3 CSS -->
@@ -69,10 +68,19 @@
     </div>
     </nav>
 
-    <main>
-        {{ title }}
-        <br>
-        <img src={{ image.url }}>
+    <main class="container" id="good">
+        <div class="row justify-content-end">
+            <div class="col-5">
+                <img src={{ good.image.url }} alt={{ good.title }} id="good-img">
+            </div>
+            <div class="col-6">
+                <p id="good-title">{{ good.title }}</p>
+                <p id="good-price">{{ good.price }} ₽</p>
+                <p id="good-description">{{ good.description }}</p>
+                <p id="good-quantity">Осталось {{ good.quantity }} шт.</p>
+                <p id="good-expirydate">Срок годности: {{ good.expiry_date }}</p>
+            </div>
+        </div>
     </main>
 
 	<!-- Подвал -->

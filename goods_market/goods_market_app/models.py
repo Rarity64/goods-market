@@ -15,7 +15,6 @@ class Good(models.Model):
     image = models.ImageField() # Картинка продукта
     quantity = models.IntegerField() # Количество продукта
     expiry_date = models.DateField() # Срок годности
-    author = str(User.first_name) + ' ' + str(User.last_name)
 
     def __str__(self):
         return f'{self.title}'

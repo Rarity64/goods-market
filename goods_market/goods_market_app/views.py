@@ -62,7 +62,6 @@ def catalog_view(request):
 def good_template(request, id):
     good = Good.objects.get(id = id) # конструктор класса
     context = { 
-        'title' : good.title,
-        'image' : good.image,
+        'good' : good
     }
     return render(request, 'good-template.html', context)

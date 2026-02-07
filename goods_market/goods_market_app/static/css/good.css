@@ -1,0 +1,22 @@
+#good {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+#good-img {
+    width: 450px;
+    height: 160px;
+}
+
+#good-title {
+    font-size: 2.3rem;
+}
+
+#good-price {
+    font-size: 1.5rem;
+    color: gray;
+}
+
+#good-description {
+    color: gray;
+}
