@@ -20,3 +20,15 @@
 #good-description {
     color: gray;
 }
+
+.good-card:hover {
+    cursor: pointer;
+}
+
+.good-title:hover {
+    color: #919092;
+}
+
+.good-img {
+    height: 5.5rem;
+}
