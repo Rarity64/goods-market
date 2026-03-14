@@ -9,30 +9,31 @@
 {% endblock %}
 
 {% block content %}
-        <main class="reg">
-            <!-- Имя -->
-            <label for="first-name" class="form-label">Имя</label>
-            <input type="text" class="form-control" id="first-name" placeholder="Введите имя">
+    {% csrf_token %}
+    <main class="reg">
+        <!-- Имя -->
+        <label for="first-name" class="form-label">Имя</label>
+        <input type="text" class="form-control" id="first-name" placeholder="Введите имя">
 
-            <!-- Фамилия -->
-            <label for="last-name" class="form-label reg-label">Фамилия</label>
-            <input type="text" class="form-control" id="last-name" placeholder="Введите фамилию">
+        <!-- Фамилия -->
+        <label for="last-name" class="form-label reg-label">Фамилия</label>
+        <input type="text" class="form-control" id="last-name" placeholder="Введите фамилию">
 
-            <!-- Дата рождения -->
-            <label for="birthdate" class="form-label reg-label">Дата рождения</label>
-            <input type="date" class="form-control" id="birthdate" placeholder="Введите фамилию">
+        <!-- Дата рождения -->
+        <label for="birthdate" class="form-label reg-label">Дата рождения</label>
+        <input type="date" class="form-control" id="birthdate" placeholder="Введите фамилию">
 
-            <!-- Почта -->
-            <label for="email" class="form-label reg-label">Электронная почта</label>
-            <input type="email" class="form-control" id="email" placeholder="Введите почту">
+        <!-- Почта -->
+        <label for="email" class="form-label reg-label">Электронная почта</label>
+        <input type="email" class="form-control" id="email" placeholder="Введите почту">
 
-            <!-- Пароль -->
-            <label for="password" class="form-label reg-label">Пароль</label>
-            <input type="password" class="form-control" id="password" placeholder="Введите пароль">
+        <!-- Пароль -->
+        <label for="password" class="form-label reg-label">Пароль</label>
+        <input type="password" class="form-control" id="password" placeholder="Введите пароль">
 
-            <!-- Кнопка регистрации -->
-            <input type="button" class="btn btn-dark" id="reg-button" value="Зарегистрироваться">
-        </main>
+        <!-- Кнопка регистрации -->
+        <input type="button" class="btn btn-dark" id="reg-button" value="Зарегистрироваться">
+    </main>
 {% endblock %}
 
 {% block js %}

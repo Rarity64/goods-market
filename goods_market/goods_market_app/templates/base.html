@@ -14,13 +14,11 @@
     <link rel="stylesheet" href={% static 'css/footer.css' %}>
 </head>
 <body>
-    {% include 'navbar.html' %}
+    {% include 'particles/navbar.html' %}
 
-    <main>
-        {% block content %}{% endblock %}
-    </main>
+    {% block content %}{% endblock %}
     
-    {% include 'footer.html' %}
+    {% include 'particles/footer.html' %}
 
     <!-- jQuery 3.7.1 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

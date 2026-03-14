@@ -2,6 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from transliterate import translit
 
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    birthdate = models.DateField(null=True, blank=True)
+
 # Good - продукт
 class Good(models.Model):
     # CharField(max_length = 25)

@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Good
+from .models import Good, UserProfile
 
 def index(request):
     try:
@@ -40,7 +40,7 @@ def reg(request):
 
         print('Почта: ', email, '\n', 'Пароль: ', password, 'Имя: ', first_name, sep='')
 
-        user = User.objects.create_user(username, email, password)
+        user = User.objects.create_user(username = username, email = email, password = password, first_name = first_name, last_name = last_name)
 
         login(request, user)
 
@@ -65,3 +65,24 @@ def good_template(request, id):
         'good' : good
     }
     return render(request, 'good-template.html', context)
+
+def account(request):
+    # if request.method == 'POST':
+    #     email = request.POST.get('email')
+    #     password = request.POST.get('password')
+    #     first_name = request.POST.get('firstName')
+    #     last_name = request.POST.get('lastName')
+    #     birthday = request.POST.get('birthday')
+    #     username = email
+
+    #     return JsonResponse({'status': 'success'})
+    # user_profile = UserProfile.objects.get(id = request.user.id)
+    print(request.user.id)
+    context = {
+        'username' : request.user.username,
+        'first_name' : request.user.first_name,
+        'last_name' : request.user.last_name,
+        'email' : request.user.email,
+        # 'birthdate' : user_profile.birthdate
+    }
+    return render(request, 'account.html', context, status=418)

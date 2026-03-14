@@ -38,12 +38,12 @@ $('#auth-button').click(
             },
             error: function(error) {
                 console.error('Error: ', error);
-                authButton.text('Нет такого пользователя');
+                alert('Нет такого пользователя');
                 authButton.css({
                     'background-color': '#af4c4f',
                     'color': '#fff',
                 });
-                window.location.href = '/';
+                window.location.href = '/auth';
             },
         });
     }
