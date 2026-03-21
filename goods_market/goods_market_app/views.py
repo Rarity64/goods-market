@@ -53,7 +53,7 @@ def logout_view(request):
     return redirect('index')
 
 def catalog_view(request):
-    good = Good.objects.all()
+    good = Good.objects.filter(food_type = 'Сл')
     context = {
         'good_list' : good,
     }
