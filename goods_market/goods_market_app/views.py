@@ -52,10 +52,25 @@ def logout_view(request):
     logout(request)
     return redirect('index')
 
-def catalog_view(request):
-    good = Good.objects.filter(food_type = 'Сл')
+def catalog_view(request, food_type):
+    food_type_name = ''
+
+    if food_type == 'all':
+        good = Good.objects.all()
+        food_type_name = 'Всё'
+    else:
+        good = Good.objects.filter(food_type = food_type)
+
+        food_types = Good.food_types
+    
+        for ft in food_types:
+            if ft[0] == food_type:
+                food_type_name = ft[1]
+                break
+            
     context = {
         'good_list' : good,
+        'food_type' : food_type_name
     }
     return render(request, 'catalog.html', context)
 
@@ -67,22 +82,11 @@ def good_template(request, id):
     return render(request, 'good-template.html', context)
 
 def account(request):
-    # if request.method == 'POST':
-    #     email = request.POST.get('email')
-    #     password = request.POST.get('password')
-    #     first_name = request.POST.get('firstName')
-    #     last_name = request.POST.get('lastName')
-    #     birthday = request.POST.get('birthday')
-    #     username = email
-
-    #     return JsonResponse({'status': 'success'})
-    # user_profile = UserProfile.objects.get(id = request.user.id)
     print(request.user.id)
     context = {
         'username' : request.user.username,
         'first_name' : request.user.first_name,
         'last_name' : request.user.last_name,
         'email' : request.user.email,
-        # 'birthdate' : user_profile.birthdate
     }
-    return render(request, 'account.html', context, status=418)
+    return render(request, 'account.html', context)

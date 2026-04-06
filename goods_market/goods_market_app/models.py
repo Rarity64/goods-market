@@ -15,11 +15,11 @@ class Good(models.Model):
     # FilePathField() - путь до файла
 
     food_types = (
-        ('Фр', 'Фрукты'), 
-        ('Ов', 'Овощи'), 
-        ('Зел', 'Зелень'), 
-        ('Сл', 'Сладкое'), 
-        ('Мяс', 'Мясо')
+        ('fruits', 'Фрукты'), 
+        ('vegetables', 'Овощи'), 
+        ('greenery', 'Зелень'), 
+        ('sweets', 'Сладкое'), 
+        ('meat', 'Мясо')
     )
 
     def user_directory_path(instance, filename):

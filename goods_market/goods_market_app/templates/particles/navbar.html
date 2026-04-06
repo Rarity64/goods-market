@@ -2,13 +2,11 @@
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
 <div class="container">
     <a class="navbar-brand" href="/">
-        <!-- <img src="./img/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="not found" loading="lazy"> -->
-        <i class="fa-solid fa-seedling" style="color: #0efb35;"></i>
-        <!-- <i class="fa-solid fa-gamepad fa-sm" style="color: #0efb35;"></i> -->
+        <i class="fa-solid fa-basket-shopping" style="color: rgb(99, 230, 190);"></i>
         Продукты 24/7
     </a>
 
-    <!-- Кнопка бургер -->
+    <!-- Кнопка бургер -->``
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarWithDropdown" aria-controls="navbarWithDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,16 +17,16 @@
                 <a class="nav-link active" aria-current="page" href="#">Главная</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href={% url 'catalog' %}>Каталог товаров</a>
+                <a class="nav-link" href={% url 'catalog' 'all' %}>Каталог товаров</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown">
                     Категории
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Свежие овощи и фрукты</a></li>
-                    <li><a class="dropdown-item" href="#">Молочная продукция</a></li>
-                    <li><a class="dropdown-item" href="#">Мясо</a></li>
+                    <li><a class="dropdown-item" href={% url 'catalog' 'vegetables' %}>Овощи</a></li>
+                    <li><a class="dropdown-item" href={% url 'catalog' 'fruits' %}>Фрукты</a></li>
+                    <li><a class="dropdown-item" href={% url 'catalog' 'meat' %}>Мясо</a></li>
                 </ul>
             </li>
             <li class="nav-item dropdown">
@@ -36,7 +34,7 @@
                 <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ username }}</a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a class="dropdown-item" id="logout-link" href={% url 'account' %}>Профиль</a>
+                        <a class="dropdown-item" id="account-link" href={% url 'account' %}>Профиль</a>
                         <a class="dropdown-item" id="logout-link" href={% url 'logout' %}>Выйти</a>
                     </li>
                 </ul>

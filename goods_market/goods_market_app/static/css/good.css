@@ -1,3 +1,12 @@
+.catalog-title-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
 #good {
     margin-top: 5rem;
     margin-bottom: 5rem;

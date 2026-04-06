@@ -10,7 +10,7 @@ urlpatterns = [
     path('auth/', views.auth, name='auth'),
     path('reg/', views.reg, name='reg'),
     path('logout/', views.logout_view, name='logout'),
-    path('catalog/', views.catalog_view, name='catalog'),
+    path('catalog/<str:food_type>', views.catalog_view, name='catalog'),
     path('good/<int:id>', views.good_template, name='good'),
     path('account/', views.account, name='account'),
 ]

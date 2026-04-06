@@ -13,15 +13,21 @@
 {% block content %}
     <!-- Заголовок сайта -->
     <header>
-        <div class="container text-white roboto-italic es-header-bg">
-            <h1 class="es-header-title">
-                Магазин продуктов
-            </h1>
-            <h2 class="es-header-title">
-                ул. Ленина, 102
-            </h2>
-            <div class="es-text-header text-center">
-                Работает доставка
+        <div class="container roboto-italic es-header-bg">
+            <div class="row">
+                <h1 class="es-header-title">
+                    Магазин продуктов
+                </h1>
+            </div>
+            <div class="row">
+                <h2 class="es-header-title">
+                    ул. Ленина, 102
+                </h2>
+            </div>
+            <div class="row">
+                <div class="es-text-header">
+                    Работает доставка
+                </div>
             </div>
         </div>
     </header>
@@ -30,78 +36,78 @@
    <section class="es-interesting">
         <div class="container">
             <div class="row">
-                <h1 class="es-interesting-title">Lorem</h1>
-                <h2 class="es-interesting-title">Ipsum</h2>
+                <h1 class="es-interesting-main-title">Почему выбирают нас</h1>
+                <h2 class="es-interesting-main-subtitle">Качество и удобство каждый день</h2>
             </div>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center mt-4">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-4 interesting-col" id="first-interesting-col">
                         <div class="d-flex">
                             <div class="es-interesting-icon">
-                                <i class="fa-solid fa-seedling"></i>
+                                <i class="fa-solid fa-basket-shopping"></i>
                             </div>
-                            <div class="es-interesting-text">
-                                <h3>Lorem</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                            <div class="es-interesting-text-block">
+                                <h3 class="es-interesting-title">Свежие продукты</h3>
+                                <p class="es-interesting-text">Ежедневные поставки овощей, фруктов и молочной продукции</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 interesting-col">
                         <div class="d-flex">
                             <div class="es-interesting-icon">
-                                <i class="fa-solid fa-seedling"></i>
+                                <i class="fa-solid fa-leaf"></i>
                             </div>
-                            <div class="es-interesting-text">
-                                <h3>Lorem</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                            <div class="es-interesting-text-block">
+                                <h3 class="es-interesting-title">Натуральный состав</h3>
+                                <p class="es-interesting-text">Без лишних добавок и сомнительных ингредиентов</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 interesting-col">
                         <div class="d-flex">
                             <div class="es-interesting-icon">
-                                <i class="fa-solid fa-seedling"></i>
+                                <i class="fa-solid fa-location-dot"></i>
                             </div>
-                            <div class="es-interesting-text">
-                                <h3>Lorem</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                            <div class="es-interesting-text-block">
+                                <h3 class="es-interesting-title">Удобное расположение</h3>
+                                <p class="es-interesting-text">Магазин рядом с домом — экономим ваше время</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center pb-3" id="second-interesting-row">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-4 interesting-col">
                         <div class="d-flex">
                             <div class="es-interesting-icon">
-                                <i class="fa-solid fa-seedling"></i>
+                                <i class="fa-solid fa-motorcycle"></i>
                             </div>
-                            <div class="es-interesting-text">
-                                <h3>Lorem</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                            <div class="es-interesting-text-block">
+                                <h3 class="es-interesting-title">Быстрая доставка</h3>
+                                <p class="es-interesting-text">Привезём продукты прямо к вашей двери</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 interesting-col">
                         <div class="d-flex">
                             <div class="es-interesting-icon">
-                                <i class="fa-solid fa-seedling"></i>
+                                <i class="fa-solid fa-money-bill-wave"></i>
                             </div>
-                            <div class="es-interesting-text">
-                                <h3>Lorem</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                            <div class="es-interesting-text-block">
+                                <h3 class="es-interesting-title">Доступные цены</h3>
+                                <p class="es-interesting-text">Честная стоимость без переплат и акций-ловушек</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 interesting-col">
                         <div class="d-flex">
                             <div class="es-interesting-icon">
-                                <i class="fa-solid fa-seedling"></i>
+                                <i class="fa-solid fa-fish-fins"></i>
                             </div>
-                            <div class="es-interesting-text">
-                                <h3>Lorem</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                            <div class="es-interesting-text-block">
+                                <h3 class="es-interesting-title">Широкий ассортимент</h3>
+                                <p class="es-interesting-text">Всё необходимое в одном месте — от хлеба до деликатесов</p>
                             </div>
                         </div>
                     </div>
@@ -115,11 +121,11 @@
 		<div class="container">
 			<div class="col-sm-12 d-flex justify-content-center">
 				<div class="title">
-					<h2 class="title-main">Форма обратной связи</h2>
-					<p class="title-text">Оставьте свой адрес почты и мы с вами свяжемся</p>
+					<h2 class="title-main">Полезная рассылка</h2>
+					<p class="title-text">Получайте полезные рецепты на почту раз в неделю</p>
 					<div class="feedback-form">
 						<input type="email" class="form-control" name="email" id="email" placeholder="Введите адрес почты">
-						<button id="submit-button" class="form-control btn btn-dark">Отправить</button>
+						<button id="submit-button" class="form-control btn btn-dark">Подписаться</button>
 					</div>
 				</div>
 			</div>

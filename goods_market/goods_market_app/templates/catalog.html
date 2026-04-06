@@ -10,6 +10,11 @@
 
 {% block content %}
     <main class="container" id="good">
+        <div class="row">
+            <div class="catalog-title-col">
+                <h2 class="catalog-title">{{ food_type }}</h2>
+            </div>
+        </div>
         <div class="row justify-content-end">
             {% for good in good_list %}
             <div class="col-4">

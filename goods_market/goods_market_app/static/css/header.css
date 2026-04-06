@@ -5,34 +5,39 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .es-header-title {
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 
 .es-text-header {
     font-size: 1.5rem;
-    font-weight: 600;
+    color: white;
 }
 
 .es-header-bg {
-    display: inline-block;
-    margin-top: 4rem;
-    margin-left: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     padding: 2rem;
     background: rgba(0, 0, 0, 0.60);
     border-radius: 15px;
+    width: 90%;
 }
 
 .roboto-italic {
-  font-family: "Roboto", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
     "wdth" 100;
 }
 
@@ -42,8 +47,6 @@ header {
     min-width: 100%;
     background: rgba(0, 0, 0, 0.50);
 }
-
-
 
 .my-class {
     margin-top: 5rem;
@@ -56,13 +59,17 @@ header {
 
 /* Мобильная версия */
 @media screen and (max-width: 600px) {
-    header {
-        height: 4%;
-    }
+    /* header {
+        height: 30%;
+    } */
 
     .es-header-title {
-        font-size: 60px;
+        font-size: 30px;
         display: flex;
         text-align: center;
+    }
+
+    .es-text-header {
+        font-size: 20px;
     }
 }
