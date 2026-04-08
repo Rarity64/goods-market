@@ -1,3 +1,12 @@
+.good-card {
+    /* width: 18rem; */
+}
+
+#good {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
 .catalog-title-col {
     display: flex;
     flex-direction: column;
@@ -5,11 +14,6 @@
     justify-content: center;
     text-align: center;
     width: 100%;
-}
-
-#good {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
 }
 
 #good-img {
@@ -43,5 +47,7 @@
 }
 
 @media screen and (max-width: 600px) {
-    
+    .good-col {
+        width: 100%;
+    }    
 }

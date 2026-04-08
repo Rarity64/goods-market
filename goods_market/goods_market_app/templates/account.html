@@ -9,7 +9,7 @@
 
 {% block content %}
     {% csrf_token %}
-    <main class="container account">
+    <div class="container account">
         <h1>Настройки профиля</h1>
         <!-- Имя -->
         <label for="first-name" class="form-label">Имя</label>
@@ -35,7 +35,7 @@
 
         <!-- Кнопка регистрации -->
         <input type="button" class="btn btn-dark" id="save-button" value="Сохранить">
-    </main>   
+    </div>   
 {% endblock %}
 
 {% block js %}

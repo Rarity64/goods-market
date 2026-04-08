@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-    <main class="container" id="good">
+    <div class="container" id="good">
         <div class="row justify-content-end">
             <div class="col-5">
                 <img src={{ good.image.url }} alt={{ good.title }} id="good-img">
@@ -22,5 +22,5 @@
                 <p id="good-expirydate">Срок годности: {{ good.expiry_date }}</p>
             </div>
         </div>
-    </main>
+    </div>
 {% endblock %}

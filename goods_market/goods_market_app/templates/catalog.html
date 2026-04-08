@@ -5,11 +5,11 @@
 
 {% block css %}
     <link rel="stylesheet" href={% static 'css/header.css' %}>
-    <link rel="stylesheet" href={% static 'css/good.css' %}>
+    <link rel="stylesheet" href={% static 'css/catalog.css' %}>
 {% endblock %}
 
 {% block content %}
-    <main class="container" id="good">
+    <div class="container" id="good">
         <div class="row">
             <div class="catalog-title-col">
                 <h2 class="catalog-title">{{ food_type }}</h2>
@@ -17,8 +17,8 @@
         </div>
         <div class="row justify-content-end">
             {% for good in good_list %}
-            <div class="col-4">
-                <div class="card good-card" style="width: 18rem;" onclick="window.location = '/good/{{ good.id }}'">
+            <div class="col-4 good-col">
+                <div class="card good-card" onclick="window.location = '/good/{{ good.id }}'">
                     <img src={{ good.image.url }} class="card-img-top good-img" alt={{ good.title }} id="img-{{ good.id }}">
                     <div class="card-body">
                         <h5 class="card-title good-title">{{ good.title }}</h5>
@@ -29,7 +29,7 @@
             </div>
             {% endfor %}
         </div>
-    </main>
+    </div>
 {% endblock %}
 
 {% block js %}

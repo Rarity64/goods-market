@@ -10,7 +10,7 @@
 
 {% block content %}
     {% csrf_token %}
-    <main class="auth">
+    <div class="container auth">
         <label for="email" class="form-label">Электронная почта</label>
         <input type="email" class="form-control" id="email" placeholder="Введите почту">
         <label for="password" class="form-label" id="password-label">Пароль</label>
@@ -19,7 +19,7 @@
         <div class="reg-container">
             <a href="{% url 'reg' %}" class="reg-link">Зарегистрироваться</a>
         </div>
-    </main>   
+    </div>   
 {% endblock %}
 
 {% block js %}

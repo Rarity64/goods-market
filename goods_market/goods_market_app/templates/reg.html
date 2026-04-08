@@ -10,7 +10,7 @@
 
 {% block content %}
     {% csrf_token %}
-    <main class="reg">
+    <div class="reg">
         <!-- Имя -->
         <label for="first-name" class="form-label">Имя</label>
         <input type="text" class="form-control" id="first-name" placeholder="Введите имя">
@@ -33,7 +33,7 @@
 
         <!-- Кнопка регистрации -->
         <input type="button" class="btn btn-dark" id="reg-button" value="Зарегистрироваться">
-    </main>
+    </div>
 {% endblock %}
 
 {% block js %}
