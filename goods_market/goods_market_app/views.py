@@ -93,6 +93,7 @@ def account(request):
         }
         return render(request, 'account.html', context)
     except AttributeError:
+<<<<<<< HEAD
         return HttpResponse('<h1>401 Unauthorized</h1>', status=401)
     
 def email(request):
@@ -101,3 +102,6 @@ def email(request):
         print('Получилось взять имейл: ', email)
         return JsonResponse({'status': 'success'})
     return HttpResponse(status=200)
+=======
+        return HttpResponse("<h1>401 Unauthorized</h1>", status=401)
+>>>>>>> 3968334 (footer is fixed)
