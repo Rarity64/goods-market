@@ -4,6 +4,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Good, UserProfile
+from django.core.mail import send_mail
 
 def index(request):
     try:
@@ -92,4 +93,11 @@ def account(request):
         }
         return render(request, 'account.html', context)
     except AttributeError:
-        return HttpResponse("<h1>401 Unauthorized</h1>", status=401)
+        return HttpResponse('<h1>401 Unauthorized</h1>', status=401)
+    
+def email(request):
+    if request.method == 'POST' and request.POST.get('email'):
+        email = request.POST.get('email')
+        print('Получилось взять имейл: ', email)
+        return JsonResponse({'status': 'success'})
+    return HttpResponse(status=200)

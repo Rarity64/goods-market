@@ -34,15 +34,14 @@ $('#reg-button').click(
             dataType: 'json',
             data: userData,
 
-            success: 
-                function(data) {
-                    regButton.text('Успешно');
-                    regButton.prop('disabled', true);
-                    regButton.css({
-                        'background-color': '#4CAF50',
-                        'color': '#fff',
-                    });
-                    window.location.href = '/'; //Переход на главную сайта
+            success: function(data) {
+                regButton.text('Успешно');
+                regButton.prop('disabled', true);
+                regButton.css({
+                    'background-color': '#4CAF50',
+                    'color': '#fff',
+                });
+                window.location.href = '/'; //Переход на главную сайта
                 },
         });
     }

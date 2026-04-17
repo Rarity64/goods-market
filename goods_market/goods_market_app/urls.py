@@ -13,5 +13,6 @@ urlpatterns = [
     path('catalog/<str:food_type>', views.catalog_view, name='catalog'),
     path('good/<int:id>', views.good_template, name='good'),
     path('account/', views.account, name='account'),
+    path('email/', views.email, name='email')
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

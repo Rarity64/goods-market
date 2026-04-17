@@ -124,11 +124,24 @@
 					<h2 class="title-main">Полезная рассылка</h2>
 					<p class="title-text">Получайте полезные рецепты на почту раз в неделю</p>
 					<div class="feedback-form">
+                        {% csrf_token %}
 						<input type="email" class="form-control" name="email" id="email" placeholder="Введите адрес почты">
-						<button id="submit-button" class="form-control btn btn-dark">Подписаться</button>
+						<input type="button" id="submit-button" class="form-control btn btn-dark" value="Подписаться">
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
+    {% comment %} <button type="button" class="btn btn-primary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-bs-original-title="" title="">
+        Popover on bottom
+    </button> {% endcomment %}
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+
+    </script>
+
+    <script type="text/javascript" src={% static 'js/email.js' %}></script>
 {% endblock %}
