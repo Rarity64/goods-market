@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Good, UserProfile
+from .models import Good, UserProfile, EmailDigest
 from django.core.mail import send_mail
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
@@ -116,6 +116,9 @@ def email(request):
             [email],
             fail_silently=False,
         )
+
+        email_digest = EmailDigest(email = email)
+        email_digest.save()
 
         return JsonResponse({'status': 'success', 'message' : 'Отправлено'})
     return JsonResponse({'status' : 'error', 'message' : 'Метод не разрешён. Только POST.'}, status=405)
