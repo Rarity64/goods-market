@@ -19,12 +19,10 @@ $('#submit-button').click(
                 'email' : email,
                 'csrfmiddlewaretoken' : CSRF
             },
-            success: function(xhr) {
-                if(xhr.responseJSON) {
-                    submitButton.val(xhr.responseJSON.message);
-                    submitButton.css('background-color', 'green');
-                    submitButton.prop('disabled', true);
-                }
+            success: function(data) {
+                submitButton.val(data.message);
+                submitButton.css('background-color', 'green');
+                submitButton.prop('disabled', true);
             },
             error: function(xhr) {
                 if(xhr.responseJSON) {

@@ -8,6 +8,7 @@ from django.core.mail import send_mail
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.conf import settings
+import random
 
 def index(request):
     try:
@@ -109,10 +110,10 @@ def email(request):
             return JsonResponse({'status': 'error', 'message' : 'Неправильно ввёден адрес почты'}, status=400)
 
         send_mail(
-            "Проверка из Django",
-            "Привет из Django!",
+            "Полезная рассылка",
+            "Вы будете получать полезную рассылку о полезных продуктах.",
             'edsuyargulov@yandex.ru',
-            [str(email)],
+            [email],
             fail_silently=False,
         )
 
