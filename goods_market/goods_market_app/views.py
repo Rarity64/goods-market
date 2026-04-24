@@ -5,6 +5,9 @@ from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Good, UserProfile
 from django.core.mail import send_mail
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
+from django.conf import settings
 
 def index(request):
     try:
@@ -93,15 +96,25 @@ def account(request):
         }
         return render(request, 'account.html', context)
     except AttributeError:
-<<<<<<< HEAD
         return HttpResponse('<h1>401 Unauthorized</h1>', status=401)
     
 def email(request):
     if request.method == 'POST' and request.POST.get('email'):
-        email = request.POST.get('email')
-        print('Получилось взять имейл: ', email)
-        return JsonResponse({'status': 'success'})
-    return HttpResponse(status=200)
-=======
-        return HttpResponse("<h1>401 Unauthorized</h1>", status=401)
->>>>>>> 3968334 (footer is fixed)
+        
+        try:
+            email = request.POST.get('email')
+            validate_email(email)
+            print('Получилось взять имейл: ', email)
+        except ValidationError:
+            return JsonResponse({'status': 'error', 'message' : 'Неправильно ввёден адрес почты'}, status=400)
+
+        send_mail(
+            "Проверка из Django",
+            "Привет из Django!",
+            'edsuyargulov@yandex.ru',
+            [str(email)],
+            fail_silently=False,
+        )
+
+        return JsonResponse({'status': 'success', 'message' : 'Отправлено'})
+    return JsonResponse({'status' : 'error', 'message' : 'Метод не разрешён. Только POST.'}, status=405)
